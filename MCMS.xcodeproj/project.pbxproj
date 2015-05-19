@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		F2BF3B031B0BDD6900D9464D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF3B021B0BDD6900D9464D /* main.m */; };
 		F2BF3B061B0BDD6900D9464D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF3B051B0BDD6900D9464D /* AppDelegate.m */; };
-		F2BF3B091B0BDD6900D9464D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF3B081B0BDD6900D9464D /* ViewController.m */; };
+		F2BF3B091B0BDD6900D9464D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF3B081B0BDD6900D9464D /* RootViewController.m */; };
 		F2BF3B0C1B0BDD6900D9464D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2BF3B0A1B0BDD6900D9464D /* Main.storyboard */; };
 		F2BF3B0E1B0BDD6900D9464D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2BF3B0D1B0BDD6900D9464D /* Images.xcassets */; };
 		F2BF3B111B0BDD6900D9464D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2BF3B0F1B0BDD6900D9464D /* LaunchScreen.xib */; };
 		F2BF3B1D1B0BDD6900D9464D /* MCMSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF3B1C1B0BDD6900D9464D /* MCMSTests.m */; };
+		F2BF3B281B0BDDC500D9464D /* MagicalCreature.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF3B271B0BDDC500D9464D /* MagicalCreature.m */; };
+		F2BF3B2B1B0BE48900D9464D /* CreatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BF3B2A1B0BE48900D9464D /* CreatureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +34,18 @@
 		F2BF3B021B0BDD6900D9464D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F2BF3B041B0BDD6900D9464D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F2BF3B051B0BDD6900D9464D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F2BF3B071B0BDD6900D9464D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F2BF3B081B0BDD6900D9464D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F2BF3B071B0BDD6900D9464D /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F2BF3B081B0BDD6900D9464D /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		F2BF3B0B1B0BDD6900D9464D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F2BF3B0D1B0BDD6900D9464D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F2BF3B101B0BDD6900D9464D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F2BF3B161B0BDD6900D9464D /* MCMSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCMSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BF3B1B1B0BDD6900D9464D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2BF3B1C1B0BDD6900D9464D /* MCMSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCMSTests.m; sourceTree = "<group>"; };
+		F2BF3B261B0BDDC500D9464D /* MagicalCreature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalCreature.h; sourceTree = "<group>"; };
+		F2BF3B271B0BDDC500D9464D /* MagicalCreature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalCreature.m; sourceTree = "<group>"; };
+		F2BF3B291B0BE48900D9464D /* CreatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatureViewController.h; sourceTree = "<group>"; };
+		F2BF3B2A1B0BE48900D9464D /* CreatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +89,13 @@
 			children = (
 				F2BF3B041B0BDD6900D9464D /* AppDelegate.h */,
 				F2BF3B051B0BDD6900D9464D /* AppDelegate.m */,
-				F2BF3B071B0BDD6900D9464D /* ViewController.h */,
-				F2BF3B081B0BDD6900D9464D /* ViewController.m */,
+				F2BF3B071B0BDD6900D9464D /* RootViewController.h */,
+				F2BF3B081B0BDD6900D9464D /* RootViewController.m */,
+				F2BF3B291B0BE48900D9464D /* CreatureViewController.h */,
+				F2BF3B2A1B0BE48900D9464D /* CreatureViewController.m */,
 				F2BF3B0A1B0BDD6900D9464D /* Main.storyboard */,
+				F2BF3B261B0BDDC500D9464D /* MagicalCreature.h */,
+				F2BF3B271B0BDDC500D9464D /* MagicalCreature.m */,
 				F2BF3B0D1B0BDD6900D9464D /* Images.xcassets */,
 				F2BF3B0F1B0BDD6900D9464D /* LaunchScreen.xib */,
 				F2BF3B001B0BDD6900D9464D /* Supporting Files */,
@@ -219,8 +229,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2BF3B091B0BDD6900D9464D /* ViewController.m in Sources */,
+				F2BF3B091B0BDD6900D9464D /* RootViewController.m in Sources */,
+				F2BF3B281B0BDDC500D9464D /* MagicalCreature.m in Sources */,
 				F2BF3B061B0BDD6900D9464D /* AppDelegate.m in Sources */,
+				F2BF3B2B1B0BE48900D9464D /* CreatureViewController.m in Sources */,
 				F2BF3B031B0BDD6900D9464D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
