@@ -68,6 +68,16 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="alg-uF-hmF"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B76-Dn-MtK">
+                                <rect key="frame" x="202" y="37" width="41" height="30"/>
+                                <state key="normal" title="Battle">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="battleButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KAj-ew-gZR"/>
+                                    <segue destination="fgS-hs-czq" kind="push" identifier="segueBattle" id="f5a-kw-q3O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -87,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="833" y="-81"/>
+            <point key="canvasLocation" x="847" y="-119"/>
         </scene>
         <!--Creature View Controller-->
         <scene sceneID="H8T-h6-c80">
@@ -155,7 +165,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLu-vE-HJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1216" y="-81"/>
+            <point key="canvasLocation" x="1200" y="-61"/>
+        </scene>
+        <!--Battle View Controller-->
+        <scene sceneID="5xu-EO-GFU">
+            <objects>
+                <viewController id="fgS-hs-czq" customClass="BattleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QmC-8E-NU7"/>
+                        <viewControllerLayoutGuide type="bottom" id="v20-mW-WBL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GRq-yq-55q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="v7O-cr-x5B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YCS-Q5-36p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1557" y="-196"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bbp-Vs-GF9">

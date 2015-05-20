@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "CreatureViewController.h"
+#import "BattleViewController.h"
 #import "MagicalCreature.h"
 
 @interface RootViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -72,11 +73,21 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow]; //select creature
-    MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
-    [segue.destinationViewController setTitle:creature.name];
-    CreatureViewController *creatureVC = segue.destinationViewController;
-    creatureVC.creature = creature;
+
+
+    if ([segue.identifier isEqualToString:@"segueBattle"])
+    {
+        //BattleViewController *battleVC = segue.destinationViewController;
+        NSLog(@"Segue from Root to Battle");
+
+
+    } else {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow]; //select creature
+        MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
+        [segue.destinationViewController setTitle:creature.name];
+        CreatureViewController *creatureVC = segue.destinationViewController;
+        creatureVC.creature = creature;
+    }
 }
 
 
@@ -84,6 +95,9 @@
     [super viewWillAppear:animated];
     [self.tableView reloadData]; // to reload selected cell
     
+}
+- (IBAction)battleButtonPressed:(UIButton *)sender {
+//    [self performSegueWithIdentifier:@"segueBattle" sender:sender];
 }
 
 @end
