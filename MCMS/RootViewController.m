@@ -15,6 +15,8 @@
 @property NSMutableArray *creatures;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property MagicalCreature *firstCreature;
+@property MagicalCreature *secondCreature;
 
 @end
 
@@ -71,12 +73,19 @@
 
 }
 
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow]; //select creature
-    MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
-    [segue.destinationViewController setTitle:creature.name];
-    CreatureViewController *creatureVC = segue.destinationViewController;
-    creatureVC.creature = creature;
+    if ([segue.identifier isEqualToString:@"ShowCreatureSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow]; //select creature
+        MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
+        [segue.destinationViewController setTitle:creature.name];
+        CreatureViewController *creatureVC = segue.destinationViewController;
+        creatureVC.creature = creature;
+    } else if ([segue.identifier isEqualToString:@"pushSegue"]){
+
+    }
+
+
 }
 
 

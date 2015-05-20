@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KWs-Hj-aGX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KWs-Hj-aGX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -68,6 +68,15 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="alg-uF-hmF"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZR-TN-KaB">
+                                <rect key="frame" x="258" y="37" width="45" height="30"/>
+                                <state key="normal" title="Battle!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fN7-oM-i9Q" kind="push" identifier="pushSegue" id="gvC-Zk-GZB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -89,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="833" y="-81"/>
         </scene>
-        <!--Creature View Controller-->
+        <!--Battle View Controller-->
         <scene sceneID="H8T-h6-c80">
             <objects>
-                <viewController id="1fF-LM-PQF" customClass="CreatureViewController" sceneMemberID="viewController">
+                <viewController id="1fF-LM-PQF" customClass="BattleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nBD-dc-ZNy"/>
                         <viewControllerLayoutGuide type="bottom" id="4Lq-uS-s8L"/>
@@ -141,6 +150,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qq3-I9-HRc">
+                                <rect key="frame" x="258" y="121" width="56" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Select">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -156,6 +173,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLu-vE-HJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1216" y="-81"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="RvI-PT-HdT">
+            <objects>
+                <viewController id="fN7-oM-i9Q" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qsP-gP-L4Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="s4q-8t-cR6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g0a-t2-QDz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJZ-4s-0dk">
+                                <rect key="frame" x="16" y="28" width="190" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="6Ef-79-vRd"/>
+                                    <constraint firstAttribute="height" constant="190" id="Wr2-z6-4Fa"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m7p-VY-Y5e">
+                                <rect key="frame" x="114" y="358" width="190" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="R0B-Nu-lRn"/>
+                                    <constraint firstAttribute="width" constant="190" id="ahD-Ab-VvO"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8C-Ak-fBT">
+                                <rect key="frame" x="126" y="269" width="69" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aBF-Zm-ywY"/>
+                                    <constraint firstAttribute="width" constant="69" id="glL-rg-I5V"/>
+                                </constraints>
+                                <state key="normal" title="Battle!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="m7p-VY-Y5e" firstAttribute="trailing" secondItem="g0a-t2-QDz" secondAttribute="trailingMargin" id="C5K-Wh-RfG"/>
+                            <constraint firstItem="CJZ-4s-0dk" firstAttribute="top" secondItem="qsP-gP-L4Z" secondAttribute="bottom" constant="8" id="JVh-JY-wm7"/>
+                            <constraint firstAttribute="centerX" secondItem="A8C-Ak-fBT" secondAttribute="centerX" id="K3T-AT-7f1"/>
+                            <constraint firstAttribute="centerY" secondItem="A8C-Ak-fBT" secondAttribute="centerY" id="QI1-1C-Jac"/>
+                            <constraint firstItem="CJZ-4s-0dk" firstAttribute="leading" secondItem="g0a-t2-QDz" secondAttribute="leadingMargin" id="QZE-Zs-h2I"/>
+                            <constraint firstItem="s4q-8t-cR6" firstAttribute="top" secondItem="m7p-VY-Y5e" secondAttribute="bottom" constant="20" id="k7w-yU-UXg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ayH-UJ-fmL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="em4-4h-ICw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584" y="-81"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bbp-Vs-GF9">
