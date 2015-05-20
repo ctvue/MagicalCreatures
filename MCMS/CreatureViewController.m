@@ -7,6 +7,7 @@
 //
 
 #import "CreatureViewController.h"
+#import "RootViewController.h"
 
 @interface CreatureViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -37,6 +38,9 @@
         [sender setTitle:@"Edit" forState:UIControlStateNormal];
         self.nameTextField.enabled = NO;
         self.nameTextField.hidden = YES;
+        self.creature.name = self.nameTextField.text;
+        self.nameLabel.text = self.creature.name;
+
     } else {
         [sender setTitle:@"Done" forState:UIControlStateNormal];
         self.nameTextField.hidden = NO;
@@ -54,6 +58,11 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 3;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    RootViewController *rootVC = segue.destinationViewController;
+    
 }
 
 @end

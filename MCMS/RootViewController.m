@@ -23,12 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    MagicalCreature *sunny = [[MagicalCreature alloc] initWithFullName:@"Sunny" detailDescription:@"A yellow, furry bird that likes to play with fire." accesoryList:[NSMutableArray arrayWithObjects:@"adfadf", @"asdfdf", @"asdfadsf", nil] withPicture:@"creature1.jpg"];
-    MagicalCreature *bogle = [[MagicalCreature alloc] initWithFullName:@"Bogle" detailDescription:@"A household pet that can take form of common pets. Very energetic.  Awesome.  Respectful. Committed."];
-    MagicalCreature *slinky = [[MagicalCreature alloc] initWithFullName:@"Slinky" detailDescription:@"Always make people and other createure laught."];
-    MagicalCreature *slime = [[MagicalCreature alloc] initWithFullName:@"Slime" detailDescription:@"Exhibit slimy, green mucus that makes other sick."];
-    MagicalCreature *glam = [[MagicalCreature alloc] initWithFullName:@"Glam" detailDescription:@"Likes all the glamous things."];
-    self.creatures = [NSMutableArray arrayWithObjects:sunny,bogle,slinky,slime, glam, nil];
+    MagicalCreature *sunny = [[MagicalCreature alloc] initWithFullName:@"Sunny" detailDescription:@"A yellow, furry bird that likes to play with fire." accesoryList:[NSMutableArray arrayWithObjects:@"Metal Armour", @"Sticky Glue", @"Fire", nil] withPicture:@"creature1.jpg"];
+    MagicalCreature *bogle = [[MagicalCreature alloc] initWithFullName:@"Bogle" detailDescription:@"A household pet that can take form of common pets. Very energetic.  Awesome.  Respectful. Committed." accesoryList:[NSMutableArray arrayWithObjects:@"Nunchunks", @"Laser Rays", @"Stone Knives", nil] withPicture:@"creature2.png"];
+    MagicalCreature *slinky = [[MagicalCreature alloc] initWithFullName:@"Slinky" detailDescription:@"Small, mischievous creatures who liked to play pranks on people." accesoryList:[NSMutableArray arrayWithObjects:@"Wooden Shield", @"Electric Shock Hands", nil] withPicture:@"creature3.png"];
+    MagicalCreature *slime = [[MagicalCreature alloc] initWithFullName:@"Slime" detailDescription:@"Exhibit slimy, green mucus that makes other sick." accesoryList:[NSMutableArray arrayWithObjects:@"Water Hose Shooter", @"Steel Sword", @"Virus infection", nil] withPicture:@"creature4.png"];
+    MagicalCreature *griffin = [[MagicalCreature alloc] initWithFullName:@"Glam" detailDescription:@"A creature with the body of a lion, the tail of a snake, and the head and wings of an eagle." accesoryList:[NSMutableArray arrayWithObjects:@"Electric Wings", @"Very fast, up 100 mph speed", @"Superior Strength", nil] withPicture:@"creature5.png"];
+
+
+    self.creatures = [NSMutableArray arrayWithObjects:sunny,bogle,slinky,slime, griffin, nil];
 
     for (MagicalCreature *creature in self.creatures) {
         NSLog(@"%@", creature);
@@ -75,6 +77,8 @@
     [segue.destinationViewController setTitle:creature.name];
     CreatureViewController *creatureVC = segue.destinationViewController;
     creatureVC.creature = creature;
+
+
     
 }
 
