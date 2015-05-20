@@ -60,5 +60,9 @@
     return self.creature.accessories.count;
 }
 
+- (IBAction)selectButtonPressed:(UIButton *)sender {
+        self.selectedPlayer = self.creature;
+}
+
 
 @end

@@ -12,5 +12,6 @@
 @interface CreatureViewController : UIViewController
 
 @property MagicalCreature *creature;
+@property MagicalCreature *selectedPlayer;
 
 @end

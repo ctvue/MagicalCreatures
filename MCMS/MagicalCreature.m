@@ -33,6 +33,15 @@
     return self;
 }
 
+-(instancetype)initWithFullName:(NSString *)name detailDescription:(NSString *)detail withPicture:(NSString *)picture{
+    self = [super init];
+    self.name = name;
+    self.detail = detail;
+    self.picture = picture;
+    return self;
+
+}
+
 -(instancetype)initWithFullName:(NSString *)name detailDescription:(NSString *)detail accesoryList:(NSMutableArray *)accessory withPicture:(NSString *)picture{
     self = [super init];
     self.name = name;

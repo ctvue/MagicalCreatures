@@ -9,6 +9,10 @@
 #import "BattleViewController.h"
 
 @interface BattleViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *firstImage;
+@property (weak, nonatomic) IBOutlet UILabel *firstLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *secondImage;
+@property (weak, nonatomic) IBOutlet UILabel *secondLabel;
 
 @end
 
@@ -16,22 +20,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.firstImage.image = [UIImage imageNamed:self.firstPlayer.picture];
+    self.secondImage.image = [UIImage imageNamed:self.secondPlayer.picture];
+    self.firstLabel.text = self.firstPlayer.name;
+    self.secondLabel.text = self.secondPlayer.name;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)battleButtonPressed:(UIButton *)sender {
+    int luck = rand() % 100;
+    NSString *winner = [NSString new];
+    NSString *loser = [NSString new];
+
+    if (luck > 50) {
+        winner = self.firstPlayer.name;
+        loser = self.secondPlayer.name;
+    } else {
+        winner = self.secondPlayer.name;
+        loser = self.firstPlayer.name;
+    }
+
+    NSString *titlemsg = [NSString stringWithFormat:@"%@ BEATS %@", winner, loser];
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:titlemsg message:@"" preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *dismissButton = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){}];
+
+    [alertController addAction:dismissButton];
+
+
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

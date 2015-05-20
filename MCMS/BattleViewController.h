@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MagicalCreature.h"
 
 @interface BattleViewController : UIViewController
+
+@property MagicalCreature *firstPlayer;
+@property MagicalCreature *secondPlayer;
 
 @end

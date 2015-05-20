@@ -17,6 +17,7 @@
 
 -(instancetype)initWithFullName:(NSString *)name;
 -(instancetype)initWithFullName:(NSString *)name detailDescription:(NSString *)detail;
+-(instancetype)initWithFullName:(NSString *)name detailDescription:(NSString *)detail withPicture:(NSString *)picture;
 -(instancetype)initWithFullName:(NSString *)name detailDescription:(NSString *)detail accesoryList:(NSMutableArray *)accessory;
 -(instancetype)initWithFullName:(NSString *)name detailDescription:(NSString *)detail accesoryList:(NSMutableArray *)accessory withPicture:(NSString *)picture;
 

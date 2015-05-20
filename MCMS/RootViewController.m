@@ -16,6 +16,7 @@
 @property NSMutableArray *creatures;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
 
 @end
 
@@ -33,20 +34,33 @@
 
     self.creatures = [NSMutableArray arrayWithObjects:sunny,bogle,slinky,slime, griffin, nil];
 
-    for (MagicalCreature *creature in self.creatures) {
-        NSLog(@"%@", creature);
-    }
+    self.nameTextField.text = @"Creature Name";
+    self.nameTextField.clearButtonMode = UITextFieldViewModeAlways;
+    self.descriptionTextField.text = @"Creature Description";
+    self.descriptionTextField.clearButtonMode = UITextFieldViewModeAlways;
+
+//    for (MagicalCreature *creature in self.creatures) {
+//        NSLog(@"%@", creature);
+//    }
 
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
     MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID" forIndexPath:indexPath];
+
+
+    if (creature == self.selectedCreature || creature == self.selectedCreatureOne) {
+        cell.backgroundColor = [UIColor grayColor];
+    } else {
+        cell.backgroundColor = [UIColor whiteColor];
+    }
+    
     cell.detailTextLabel.numberOfLines = 10;
     cell.textLabel.text = creature.name;
     cell.detailTextLabel.text = creature.detail;
-    cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+
 
     UIImage * image = [UIImage imageNamed:creature.picture];
     CGSize sacleSize = CGSizeMake(100, 100);
@@ -64,10 +78,13 @@
 }
 
 - (IBAction)addButtonPressed:(UIButton *)sender {
-    MagicalCreature *genericCreature = [[MagicalCreature alloc] initWithFullName:self.nameTextField.text];
+    MagicalCreature *genericCreature = [[MagicalCreature alloc] initWithFullName:self.nameTextField.text detailDescription:self.descriptionTextField.text withPicture:@"default.png"];
     [self.creatures addObject:genericCreature];
     [self.tableView reloadData];
-    self.nameTextField.text = nil;
+    self.nameTextField.text = @"Creature Name";
+    self.nameTextField.textColor = [UIColor grayColor];
+    self.descriptionTextField.text = @"Creature Description";
+    self.descriptionTextField.textColor = [UIColor grayColor];
     [self.view endEditing:YES]; //hides keyboard
 
 }
@@ -77,13 +94,15 @@
 
     if ([segue.identifier isEqualToString:@"segueBattle"])
     {
-        //BattleViewController *battleVC = segue.destinationViewController;
-        NSLog(@"Segue from Root to Battle");
+        //[segue.destinationViewController setTitle:@"Let's Battle"];
+        BattleViewController *battleVC = segue.destinationViewController;
+        battleVC.firstPlayer = self.selectedCreatureOne;
+        battleVC.secondPlayer = self.selectedCreature;
 
 
     } else {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow]; //select creature
-        MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row]; //selected creature
         [segue.destinationViewController setTitle:creature.name];
         CreatureViewController *creatureVC = segue.destinationViewController;
         creatureVC.creature = creature;
@@ -96,8 +115,17 @@
     [self.tableView reloadData]; // to reload selected cell
     
 }
-- (IBAction)battleButtonPressed:(UIButton *)sender {
-//    [self performSegueWithIdentifier:@"segueBattle" sender:sender];
+
+- (IBAction)unwindFromViewController:(UIStoryboardSegue *)segue
+{
+    CreatureViewController *creaturevc = segue.sourceViewController;
+    self.selectedCreatureOne = self.selectedCreature;
+    self.selectedCreature = creaturevc.selectedPlayer;
+
 }
+
+- (IBAction)battleButtonPressed:(UIButton *)sender {
+}
+
 
 @end
