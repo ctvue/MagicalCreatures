@@ -77,8 +77,12 @@
     [segue.destinationViewController setTitle:creature.name];
     CreatureViewController *creatureVC = segue.destinationViewController;
     creatureVC.creature = creature;
+}
 
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData]; // to reload selected cell
     
 }
 

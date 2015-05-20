@@ -57,11 +57,10 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return self.creature.accessories.count;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    RootViewController *rootVC = segue.destinationViewController;
     
 }
 
