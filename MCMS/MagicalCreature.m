@@ -25,4 +25,21 @@
     return self;
 }
 
+-(instancetype)initWithFullName:(NSString *)name detailDescription:(NSString *)detail accesoryList:(NSMutableArray *)accessory{
+    self = [super init];
+    self.name = name;
+    self.detail = detail;
+    self.accessories = accessory;
+    return self;
+}
+
+-(instancetype)initWithFullName:(NSString *)name detailDescription:(NSString *)detail accesoryList:(NSMutableArray *)accessory withPicture:(NSString *)picture{
+    self = [super init];
+    self.name = name;
+    self.detail = detail;
+    self.accessories = accessory;
+    self.picture = picture;
+    return self;
+
+}
 @end

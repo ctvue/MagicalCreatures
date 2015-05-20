@@ -12,8 +12,12 @@
 
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSString *detail;
+@property (nonatomic) NSMutableArray *accessories;
+@property (nonatomic) NSString *picture;
 
 -(instancetype)initWithFullName:(NSString *)name;
 -(instancetype)initWithFullName:(NSString *)name detailDescription:(NSString *)detail;
+-(instancetype)initWithFullName:(NSString *)name detailDescription:(NSString *)detail accesoryList:(NSMutableArray *)accessory;
+-(instancetype)initWithFullName:(NSString *)name detailDescription:(NSString *)detail accesoryList:(NSMutableArray *)accessory withPicture:(NSString *)picture;
 
 @end

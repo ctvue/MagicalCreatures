@@ -23,12 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    MagicalCreature *sunny = [[MagicalCreature alloc] initWithFullName:@"Sunny" detailDescription:@"A yellow, furry bird that likes to play with fire."];
+    MagicalCreature *sunny = [[MagicalCreature alloc] initWithFullName:@"Sunny" detailDescription:@"A yellow, furry bird that likes to play with fire." accesoryList:[NSMutableArray arrayWithObjects:@"adfadf", @"asdfdf", @"asdfadsf", nil] withPicture:@"creature1.jpg"];
     MagicalCreature *bogle = [[MagicalCreature alloc] initWithFullName:@"Bogle" detailDescription:@"A household pet that can take form of common pets. Very energetic.  Awesome.  Respectful. Committed."];
     MagicalCreature *slinky = [[MagicalCreature alloc] initWithFullName:@"Slinky" detailDescription:@"Always make people and other createure laught."];
     MagicalCreature *slime = [[MagicalCreature alloc] initWithFullName:@"Slime" detailDescription:@"Exhibit slimy, green mucus that makes other sick."];
     MagicalCreature *glam = [[MagicalCreature alloc] initWithFullName:@"Glam" detailDescription:@"Likes all the glamous things."];
-
     self.creatures = [NSMutableArray arrayWithObjects:sunny,bogle,slinky,slime, glam, nil];
 
     for (MagicalCreature *creature in self.creatures) {
@@ -39,10 +38,20 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MagicalCreature *creature = [self.creatures objectAtIndex:indexPath.row];
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID" forIndexPath:indexPath];
+    cell.detailTextLabel.numberOfLines = 10;
     cell.textLabel.text = creature.name;
     cell.detailTextLabel.text = creature.detail;
     cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+
+    UIImage * image = [UIImage imageNamed:creature.picture];
+    CGSize sacleSize = CGSizeMake(100, 100);
+    UIGraphicsBeginImageContextWithOptions(sacleSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, sacleSize.width, sacleSize.height)];
+    UIImage * resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    cell.imageView.image = resizedImage;
 
     return cell;
 }
